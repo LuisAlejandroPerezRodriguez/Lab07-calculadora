@@ -144,10 +144,25 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         resta.setText("-");
+        resta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restaActionPerformed(evt);
+            }
+        });
 
         multiplicacion.setText("*");
+        multiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiplicacionActionPerformed(evt);
+            }
+        });
 
         division.setText("/");
+        division.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divisionActionPerformed(evt);
+            }
+        });
 
         clear.setText("C");
         clear.addActionListener(new java.awt.event.ActionListener() {
@@ -318,11 +333,41 @@ public class Interfaz extends javax.swing.JFrame {
      //done=this.Pantalla.isVisible();
      //if(done!=false) this.Pantalla.setText("");
      }
+     
+     Resta r2=new Resta (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
+     if (operador=="-") this.Pantalla.setText(Double.toString(r2.execute(num1, num2)));
+     
+    Multiplicacion m2=new Multiplicacion (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
+     if (operador=="*") this.Pantalla.setText(Double.toString(m2.execute(num1, num2))); 
+     
+      Division d2=new Division (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
+     if (operador=="/") this.Pantalla.setText(Double.toString(d2.execute(num1, num2))); 
+     
     }//GEN-LAST:event_resultadoActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
-         this.Pantalla.setText(this.Pantalla.getText()+".");
+         if(!(this.Pantalla.getText().contains(".")))
+           this.Pantalla.setText(this.Pantalla.getText()+".");
+                 
     }//GEN-LAST:event_puntoActionPerformed
+
+    private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
+       Resta r1=new Resta (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
+        this.operador="-";
+        this.Pantalla.setText("");
+    }//GEN-LAST:event_restaActionPerformed
+
+    private void multiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacionActionPerformed
+        Multiplicacion m1=new Multiplicacion (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
+        this.operador="*";
+        this.Pantalla.setText("");
+    }//GEN-LAST:event_multiplicacionActionPerformed
+
+    private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
+         Division d1=new Division (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
+        this.operador="/";
+        this.Pantalla.setText("");
+    }//GEN-LAST:event_divisionActionPerformed
 
     /**
      * @param args the command line arguments

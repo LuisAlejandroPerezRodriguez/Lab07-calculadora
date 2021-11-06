@@ -23,7 +23,8 @@ public class Division extends Operacion {
         @Override
         public  double execute (double a, double b) {
             
-            this.num1=a;
+            a=0;
+            a=this.num1;
             this.num2=b;
             double resultado=a/b;
             System.out.println(resultado);
