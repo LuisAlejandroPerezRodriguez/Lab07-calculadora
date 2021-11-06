@@ -14,6 +14,7 @@ public class Interfaz extends javax.swing.JFrame {
     public double num2;
     public String operador;  
     public boolean done;
+
     
     public Interfaz() {
         initComponents();
@@ -47,6 +48,8 @@ public class Interfaz extends javax.swing.JFrame {
         division = new javax.swing.JButton();
         clear = new javax.swing.JButton();
         punto = new javax.swing.JButton();
+        borrarnumero = new javax.swing.JButton();
+        signo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora de lui");
@@ -178,14 +181,31 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        borrarnumero.setText("x");
+        borrarnumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarnumeroActionPerformed(evt);
+            }
+        });
+
+        signo.setText("+/-");
+        signo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(signo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(elseis)
@@ -216,16 +236,21 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(sumar)
                             .addComponent(division)
                             .addComponent(multiplicacion)
-                            .addComponent(resta)))
-                    .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 104, Short.MAX_VALUE))
+                            .addComponent(resta))))
+                .addGap(0, 99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(borrarnumero)
+                .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addComponent(borrarnumero)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(division)
@@ -251,11 +276,15 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(eltres)
                     .addComponent(sumar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cero)
-                    .addComponent(resultado)
-                    .addComponent(punto))
-                .addGap(42, 42, 42))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cero)
+                        .addComponent(resultado)
+                        .addComponent(punto))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(signo)))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -319,6 +348,9 @@ public class Interfaz extends javax.swing.JFrame {
         this.Pantalla.setText("");
     }//GEN-LAST:event_clearActionPerformed
 
+                       
+    
+    
     private void sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumarActionPerformed
         Suma s1=new Suma(this.num1=Double.parseDouble(this.Pantalla.getText()),0);
         this.operador="+";
@@ -327,7 +359,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
      Suma s2=new Suma(num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="+"){this.Pantalla.setText(Double.toString(s2.execute(num1, num2)));
+     if (operador=="+"){  this.Pantalla.setText(this.decimal(s2.execute(num1, num2)));
     // num1=0;
      //num2=0;
      //done=this.Pantalla.isVisible();
@@ -335,14 +367,18 @@ public class Interfaz extends javax.swing.JFrame {
      }
      
      Resta r2=new Resta (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="-") this.Pantalla.setText(Double.toString(r2.execute(num1, num2)));
+     if (operador=="-") this.Pantalla.setText(this.decimal(r2.execute(num1, num2)));
      
     Multiplicacion m2=new Multiplicacion (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="*") this.Pantalla.setText(Double.toString(m2.execute(num1, num2))); 
+     if (operador=="*") this.Pantalla.setText(this.decimal(m2.execute(num1, num2))); 
      
       Division d2=new Division (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="/") this.Pantalla.setText(Double.toString(d2.execute(num1, num2))); 
-     
+     if (operador=="/") { 
+         if(num2==0){this.Pantalla.setText("Indeterminado");}
+         
+         else {
+         this.Pantalla.setText(this.decimal(d2.execute(num1, num2)));} 
+         }
     }//GEN-LAST:event_resultadoActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
@@ -364,14 +400,45 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_multiplicacionActionPerformed
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
-         Division d1=new Division (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
+        Division d1=new Division (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
         this.operador="/";
         this.Pantalla.setText("");
     }//GEN-LAST:event_divisionActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void borrarnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarnumeroActionPerformed
+        String borrar="";
+        borrar=this.Pantalla.getText();
+        if(borrar.length()>0){
+            borrar=borrar.substring(0,borrar.length()-1);
+            this.Pantalla.setText(borrar);
+        }
+
+    }//GEN-LAST:event_borrarnumeroActionPerformed
+
+    private void signoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signoActionPerformed
+        Double num;
+        String datos;
+        datos=this.Pantalla.getText();
+        if(datos.length()>0){
+        num=(-1)*Double.parseDouble(datos);
+        
+       this.Pantalla.setText(this.decimal(num));
+        
+        }
+    }//GEN-LAST:event_signoActionPerformed
+
+    public String decimal(double resultado){
+        String retorno="";
+        retorno=Double.toString(resultado);
+        
+        if(resultado%1==0){
+            retorno=retorno.substring(0,retorno.length()-2);
+        
+        }
+        
+        return retorno;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -406,6 +473,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Pantalla;
+    private javax.swing.JButton borrarnumero;
     private javax.swing.JButton cero;
     private javax.swing.JButton clear;
     private javax.swing.JButton division;
@@ -423,6 +491,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton punto;
     private javax.swing.JButton resta;
     private javax.swing.JButton resultado;
+    private javax.swing.JButton signo;
     private javax.swing.JButton sumar;
     // End of variables declaration//GEN-END:variables
 }
