@@ -9,6 +9,10 @@ import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.applet.AudioClip;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -18,11 +22,12 @@ public class Interfaz extends javax.swing.JFrame {
     public double num1;
     public double num2;
     public String operador;  
-    public boolean done;
+    public boolean done=false;
 
     
     public Interfaz() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/portada.png")));
     }
 
     /**
@@ -63,7 +68,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora de lui");
-        setPreferredSize(new java.awt.Dimension(300, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -74,11 +78,17 @@ public class Interfaz extends javax.swing.JFrame {
         eluno.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         eluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eluno.setText("1");
+        eluno.setBorderPainted(false);
         eluno.setFocusPainted(false);
         eluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         eluno.setPreferredSize(new java.awt.Dimension(50, 50));
         eluno.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         eluno.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        eluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elunoMouseClicked(evt);
+            }
+        });
         eluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elunoActionPerformed(evt);
@@ -89,11 +99,17 @@ public class Interfaz extends javax.swing.JFrame {
         eldos.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         eldos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eldos.setText("2");
+        eldos.setBorderPainted(false);
         eldos.setFocusPainted(false);
         eldos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         eldos.setPreferredSize(new java.awt.Dimension(50, 50));
         eldos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         eldos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        eldos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eldosMouseClicked(evt);
+            }
+        });
         eldos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eldosActionPerformed(evt);
@@ -104,11 +120,17 @@ public class Interfaz extends javax.swing.JFrame {
         eltres.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         eltres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eltres.setText("3");
+        eltres.setBorderPainted(false);
         eltres.setFocusPainted(false);
         eltres.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         eltres.setPreferredSize(new java.awt.Dimension(50, 50));
         eltres.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         eltres.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        eltres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eltresMouseClicked(evt);
+            }
+        });
         eltres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eltresActionPerformed(evt);
@@ -119,11 +141,17 @@ public class Interfaz extends javax.swing.JFrame {
         sumar.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         sumar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         sumar.setText("+");
+        sumar.setBorderPainted(false);
         sumar.setFocusPainted(false);
         sumar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         sumar.setPreferredSize(new java.awt.Dimension(50, 50));
         sumar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         sumar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        sumar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sumarMouseClicked(evt);
+            }
+        });
         sumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sumarActionPerformed(evt);
@@ -134,11 +162,17 @@ public class Interfaz extends javax.swing.JFrame {
         resultado.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         resultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono3v.png"))); // NOI18N
         resultado.setText("=");
+        resultado.setBorderPainted(false);
         resultado.setFocusPainted(false);
         resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         resultado.setPreferredSize(new java.awt.Dimension(50, 50));
         resultado.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         resultado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono3v.png"))); // NOI18N
+        resultado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resultadoMouseClicked(evt);
+            }
+        });
         resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resultadoActionPerformed(evt);
@@ -149,11 +183,17 @@ public class Interfaz extends javax.swing.JFrame {
         elcuatro.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elcuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elcuatro.setText("4");
+        elcuatro.setBorderPainted(false);
         elcuatro.setFocusPainted(false);
         elcuatro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elcuatro.setPreferredSize(new java.awt.Dimension(50, 50));
         elcuatro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elcuatro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elcuatro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elcuatroMouseClicked(evt);
+            }
+        });
         elcuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elcuatroActionPerformed(evt);
@@ -164,11 +204,17 @@ public class Interfaz extends javax.swing.JFrame {
         elcinco.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elcinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elcinco.setText("5");
+        elcinco.setBorderPainted(false);
         elcinco.setFocusPainted(false);
         elcinco.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elcinco.setPreferredSize(new java.awt.Dimension(50, 50));
         elcinco.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elcinco.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elcinco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elcincoMouseClicked(evt);
+            }
+        });
         elcinco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elcincoActionPerformed(evt);
@@ -179,11 +225,17 @@ public class Interfaz extends javax.swing.JFrame {
         elseis.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elseis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elseis.setText("6");
+        elseis.setBorderPainted(false);
         elseis.setFocusPainted(false);
         elseis.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elseis.setPreferredSize(new java.awt.Dimension(50, 50));
         elseis.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elseis.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elseis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elseisMouseClicked(evt);
+            }
+        });
         elseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elseisActionPerformed(evt);
@@ -194,11 +246,17 @@ public class Interfaz extends javax.swing.JFrame {
         elsiete.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elsiete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elsiete.setText("7");
+        elsiete.setBorderPainted(false);
         elsiete.setFocusPainted(false);
         elsiete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elsiete.setPreferredSize(new java.awt.Dimension(50, 50));
         elsiete.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elsiete.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elsiete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elsieteMouseClicked(evt);
+            }
+        });
         elsiete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elsieteActionPerformed(evt);
@@ -209,11 +267,17 @@ public class Interfaz extends javax.swing.JFrame {
         elocho.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elocho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elocho.setText("8");
+        elocho.setBorderPainted(false);
         elocho.setFocusPainted(false);
         elocho.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elocho.setPreferredSize(new java.awt.Dimension(50, 50));
         elocho.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elocho.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elocho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elochoMouseClicked(evt);
+            }
+        });
         elocho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elochoActionPerformed(evt);
@@ -224,11 +288,17 @@ public class Interfaz extends javax.swing.JFrame {
         elnueve.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         elnueve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elnueve.setText("9");
+        elnueve.setBorderPainted(false);
         elnueve.setFocusPainted(false);
         elnueve.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         elnueve.setPreferredSize(new java.awt.Dimension(50, 50));
         elnueve.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         elnueve.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        elnueve.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                elnueveMouseClicked(evt);
+            }
+        });
         elnueve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elnueveActionPerformed(evt);
@@ -239,11 +309,17 @@ public class Interfaz extends javax.swing.JFrame {
         cero.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         cero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         cero.setText("0");
+        cero.setBorderPainted(false);
         cero.setFocusPainted(false);
         cero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cero.setPreferredSize(new java.awt.Dimension(50, 50));
         cero.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         cero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        cero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ceroMouseClicked(evt);
+            }
+        });
         cero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ceroActionPerformed(evt);
@@ -254,11 +330,17 @@ public class Interfaz extends javax.swing.JFrame {
         resta.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         resta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         resta.setText("-");
+        resta.setBorderPainted(false);
         resta.setFocusPainted(false);
         resta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         resta.setPreferredSize(new java.awt.Dimension(50, 50));
         resta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         resta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        resta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                restaMouseClicked(evt);
+            }
+        });
         resta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restaActionPerformed(evt);
@@ -268,12 +350,18 @@ public class Interfaz extends javax.swing.JFrame {
 
         multiplicacion.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         multiplicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
-        multiplicacion.setText("*");
+        multiplicacion.setText("x");
+        multiplicacion.setBorderPainted(false);
         multiplicacion.setFocusPainted(false);
         multiplicacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         multiplicacion.setPreferredSize(new java.awt.Dimension(50, 50));
         multiplicacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         multiplicacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        multiplicacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                multiplicacionMouseClicked(evt);
+            }
+        });
         multiplicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 multiplicacionActionPerformed(evt);
@@ -284,11 +372,17 @@ public class Interfaz extends javax.swing.JFrame {
         division.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         division.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         division.setText("÷");
+        division.setBorderPainted(false);
         division.setFocusPainted(false);
         division.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         division.setPreferredSize(new java.awt.Dimension(50, 50));
         division.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         division.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        division.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                divisionMouseClicked(evt);
+            }
+        });
         division.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 divisionActionPerformed(evt);
@@ -296,14 +390,20 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(division, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
-        clear.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        clear.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         clear.setText("C");
+        clear.setBorderPainted(false);
         clear.setFocusPainted(false);
         clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         clear.setPreferredSize(new java.awt.Dimension(50, 50));
         clear.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         clear.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearMouseClicked(evt);
+            }
+        });
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -314,11 +414,17 @@ public class Interfaz extends javax.swing.JFrame {
         punto.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
         punto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         punto.setText(".");
+        punto.setBorderPainted(false);
         punto.setFocusPainted(false);
         punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         punto.setPreferredSize(new java.awt.Dimension(50, 50));
         punto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         punto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        punto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                puntoMouseClicked(evt);
+            }
+        });
         punto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 puntoActionPerformed(evt);
@@ -326,14 +432,20 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
 
-        borrarnumero.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        borrarnumero.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         borrarnumero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
-        borrarnumero.setText("x");
+        borrarnumero.setText("←");
+        borrarnumero.setBorderPainted(false);
         borrarnumero.setFocusPainted(false);
         borrarnumero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         borrarnumero.setPreferredSize(new java.awt.Dimension(50, 50));
         borrarnumero.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         borrarnumero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        borrarnumero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                borrarnumeroMouseClicked(evt);
+            }
+        });
         borrarnumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 borrarnumeroActionPerformed(evt);
@@ -341,14 +453,21 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(borrarnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
-        signo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        signo.setFont(new java.awt.Font("Times New Roman", 2, 15)); // NOI18N
         signo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         signo.setText("+/-");
+        signo.setBorderPainted(false);
+        signo.setContentAreaFilled(false);
         signo.setFocusPainted(false);
         signo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         signo.setPreferredSize(new java.awt.Dimension(50, 50));
         signo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         signo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        signo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signoMouseClicked(evt);
+            }
+        });
         signo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signoActionPerformed(evt);
@@ -357,6 +476,7 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.add(signo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 53, -1));
 
         modulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
+        modulo.setBorderPainted(false);
         modulo.setPreferredSize(new java.awt.Dimension(50, 50));
         modulo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         modulo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
@@ -372,13 +492,18 @@ public class Interfaz extends javax.swing.JFrame {
         Pantalla.setOpaque(true);
 
         operaciones.setBackground(new java.awt.Color(210, 253, 238));
-        operaciones.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        operaciones.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
 
         claro.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         claro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/claro.png"))); // NOI18N
         claro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         claro.setBorderPainted(false);
         claro.setPreferredSize(new java.awt.Dimension(40, 40));
+        claro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                claroMouseClicked(evt);
+            }
+        });
         claro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 claroActionPerformed(evt);
@@ -395,19 +520,21 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(48, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(operaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(114, 114, 114)
-                        .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(operaciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(operaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(operaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
@@ -477,26 +604,30 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_sumarActionPerformed
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
+     
+        
      Suma s2=new Suma(num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
      if (operador=="+"){  this.Pantalla.setText(this.decimal(s2.execute(num1, num2)));
      this.operaciones.setText(this.decimal(num1)+"+"+this.decimal(num2));
-    // num1=0;
-     //num2=0;
-     //done=this.Pantalla.isVisible();
-     //if(done!=false) this.Pantalla.setText("");
-     }
+   
+     
+     } 
      
      Resta r2=new Resta (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
      if (operador=="-") {this.Pantalla.setText(this.decimal(r2.execute(num1, num2)));
      this.operaciones.setText(this.decimal(num1)+"-"+this.decimal(num2));}
      
     Multiplicacion m2=new Multiplicacion (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="*"){ this.Pantalla.setText(this.decimal(m2.execute(num1, num2))); 
+     if (operador=="x"){ this.Pantalla.setText(this.decimal(m2.execute(num1, num2))); 
      this.operaciones.setText(this.decimal(num1)+"x"+this.decimal(num2));}
      
       Division d2=new Division (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
      if (operador=="÷") { 
-         if(num2==0){this.Pantalla.setText("Indeterminado"); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));}
+         if(num2==0){this.Pantalla.setText("Indeterminado"); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Critical Stop.wav"));
+       sound.play();
+         }
          
          else {
          this.Pantalla.setText(this.decimal(d2.execute(num1, num2))); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));} 
@@ -518,7 +649,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void multiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacionActionPerformed
         Multiplicacion m1=new Multiplicacion (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
-        this.operador="*";
+        this.operador="x";
         this.Pantalla.setText("");
         this.operaciones.setText(this.decimal(num1)+operador);
     }//GEN-LAST:event_multiplicacionActionPerformed
@@ -595,6 +726,11 @@ public class Interfaz extends javax.swing.JFrame {
         }
         
         else { 
+            
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Battery Critical.wav"));
+       sound.play();
+       
             Interfaz tem=new Interfaz();
             this.dispose();
             tem.setVisible(true);
@@ -602,6 +738,147 @@ public class Interfaz extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_claroActionPerformed
+
+    private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
+       
+       
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Background.wav"));
+       sound.play();
+    }//GEN-LAST:event_clearMouseClicked
+
+    private void resultadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resultadoMouseClicked
+      
+        AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Notify Calendar.wav"));
+       sound.play();
+       
+        if(num2==0){sound.stop();}
+    }//GEN-LAST:event_resultadoMouseClicked
+
+    private void borrarnumeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_borrarnumeroMouseClicked
+       
+       if(this.Pantalla.getText()==""){
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Background.wav"));
+       sound.play();}
+    }//GEN-LAST:event_borrarnumeroMouseClicked
+
+    private void claroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_claroMouseClicked
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Battery Low.wav"));
+       sound.play();
+    }//GEN-LAST:event_claroMouseClicked
+
+    private void elunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elunoMouseClicked
+       AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elunoMouseClicked
+
+    private void eldosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eldosMouseClicked
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_eldosMouseClicked
+
+    private void eltresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eltresMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_eltresMouseClicked
+
+    private void ceroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ceroMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_ceroMouseClicked
+
+    private void elcuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elcuatroMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elcuatroMouseClicked
+
+    private void elcincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elcincoMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elcincoMouseClicked
+
+    private void elseisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elseisMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elseisMouseClicked
+
+    private void elsieteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elsieteMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elsieteMouseClicked
+
+    private void elochoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elochoMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elochoMouseClicked
+
+    private void elnueveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_elnueveMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_elnueveMouseClicked
+
+    private void sumarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sumarMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_sumarMouseClicked
+
+    private void restaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restaMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_restaMouseClicked
+
+    private void multiplicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_multiplicacionMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_multiplicacionMouseClicked
+
+    private void divisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_divisionMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_divisionMouseClicked
+
+    private void signoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signoMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_signoMouseClicked
+
+    private void puntoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_puntoMouseClicked
+        // TODO add your handling code here:
+         AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_puntoMouseClicked
 
     public void tema1(JButton btn){
     
@@ -634,6 +911,7 @@ public class Interfaz extends javax.swing.JFrame {
         
         return retorno;
     }
+    
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
