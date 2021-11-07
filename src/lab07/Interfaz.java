@@ -5,6 +5,11 @@
  */
 package lab07;
 
+import java.awt.Color;
+import java.awt.Frame;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 /**
  *
  * @author luisa
@@ -50,10 +55,11 @@ public class Interfaz extends javax.swing.JFrame {
         punto = new javax.swing.JButton();
         borrarnumero = new javax.swing.JButton();
         signo = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        modulo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Pantalla = new javax.swing.JLabel();
         operaciones = new javax.swing.JLabel();
+        claro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora de lui");
@@ -335,7 +341,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(borrarnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
-        signo.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        signo.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         signo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         signo.setText("+/-");
         signo.setFocusPainted(false);
@@ -350,11 +356,11 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(signo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 53, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        modulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
+        modulo.setPreferredSize(new java.awt.Dimension(50, 50));
+        modulo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        modulo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        jPanel1.add(modulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(218, 255, 255));
 
@@ -368,23 +374,40 @@ public class Interfaz extends javax.swing.JFrame {
         operaciones.setBackground(new java.awt.Color(210, 253, 238));
         operaciones.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
 
+        claro.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        claro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/claro.png"))); // NOI18N
+        claro.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        claro.setBorderPainted(false);
+        claro.setPreferredSize(new java.awt.Dimension(40, 40));
+        claro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                claroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(operaciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(operaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(114, 114, 114)
+                        .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(operaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(claro, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(operaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
@@ -530,6 +553,76 @@ public class Interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_signoActionPerformed
 
+    boolean oscuro=false;
+    
+    private void claroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claroActionPerformed
+        
+        if (!oscuro){
+        jPanel2.setBackground(Color.decode("#212b41"));
+        this.Pantalla.setBackground(Color.decode("#212b41"));
+        jPanel1.setBackground(Color.decode("#212b41"));
+        this.Pantalla.setForeground(Color.decode("#0db387"));
+        this.operaciones.setForeground(Color.decode("#0db387"));
+        
+        tema(cero);
+        tema(eluno);
+        tema(eldos);
+        tema(eltres);
+        tema(elcuatro);
+        tema(elcinco);
+        tema(elseis);
+        tema(elsiete);
+        tema(elocho); 
+        tema(elnueve);
+        tema(punto);
+        tema(signo);
+        
+        tema1(clear);
+        tema1(division);
+        tema1(multiplicacion);
+        tema1(resta);
+        tema1(sumar);
+        tema1(borrarnumero);
+        tema1(modulo);
+        
+        
+        claro.setIcon(new ImageIcon(getClass().getResource("/Imagenes/oscuro.png")));
+        resultado.setIcon(new ImageIcon(getClass().getResource("/Imagenes/resultado.png")));
+        resultado.setPressedIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro1.png")));
+        resultado.setRolloverIcon(new ImageIcon(getClass().getResource("/Imagenes/resultado1.png")));
+        resultado.setForeground(Color.white);
+        oscuro=true;
+        }
+        
+        else { 
+            Interfaz tem=new Interfaz();
+            this.dispose();
+            tem.setVisible(true);
+        }
+        
+        
+    }//GEN-LAST:event_claroActionPerformed
+
+    public void tema1(JButton btn){
+    
+         
+        btn.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro1.png")));
+        btn.setPressedIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro1.png")));
+        btn.setRolloverIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro2.png")));
+        btn.setForeground(Color.decode("#0db387"));
+
+    }
+    
+    public void tema(JButton btn){
+        
+        btn.setIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro1.png")));
+        btn.setPressedIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro1.png")));
+        btn.setRolloverIcon(new ImageIcon(getClass().getResource("/Imagenes/iconooscuro2.png")));
+        btn.setForeground(Color.orange);
+    
+    }
+    
+    
     public String decimal(double resultado){
         String retorno="";
         retorno=Double.toString(resultado);
@@ -578,6 +671,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel Pantalla;
     private javax.swing.JButton borrarnumero;
     private javax.swing.JButton cero;
+    private javax.swing.JButton claro;
     private javax.swing.JButton clear;
     private javax.swing.JButton division;
     private javax.swing.JButton elcinco;
@@ -590,9 +684,9 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton eltres;
     private javax.swing.JButton eluno;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton modulo;
     private javax.swing.JButton multiplicacion;
     private javax.swing.JLabel operaciones;
     private javax.swing.JButton punto;
