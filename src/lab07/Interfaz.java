@@ -23,11 +23,15 @@ public class Interfaz extends javax.swing.JFrame {
     public double num2;
     public String operador;  
     public boolean done=false;
-
+    
+    
     
     public Interfaz() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Imagenes/portada.png")));
+        AudioClip inicio;
+       inicio=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/chimes.wav"));
+       inicio.play();
     }
 
     /**
@@ -67,7 +71,7 @@ public class Interfaz extends javax.swing.JFrame {
         claro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora de lui");
+        setTitle("Calculadora ");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

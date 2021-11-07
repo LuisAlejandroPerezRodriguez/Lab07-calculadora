@@ -5,26 +5,24 @@
  */
 package lab07;
 
+import java.applet.AudioClip;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+
 /**
  *
  * @author luisa
  */
 public class Lab07 {
     
-    public static void main(String args[]) {
-    
-    
-    
-    java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interfaz().setVisible(true);
-            } });
-    
-    
+    public static void main(String args[]) throws LineUnavailableException {
+       
+   Interfaz f1=new Interfaz();
+   f1.setVisible(true);
+
     
     }
-    
-    
+      
     
     
 }
