@@ -29,8 +29,8 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         jPanel1 = new javax.swing.JPanel();
-        Pantalla = new javax.swing.JLabel();
         eluno = new javax.swing.JButton();
         eldos = new javax.swing.JButton();
         eltres = new javax.swing.JButton();
@@ -50,258 +50,352 @@ public class Interfaz extends javax.swing.JFrame {
         punto = new javax.swing.JButton();
         borrarnumero = new javax.swing.JButton();
         signo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        Pantalla = new javax.swing.JLabel();
+        operaciones = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora de lui");
-        setPreferredSize(new java.awt.Dimension(350, 500));
+        setPreferredSize(new java.awt.Dimension(300, 500));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(425, 635));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Pantalla.setBackground(new java.awt.Color(255, 255, 255));
-        Pantalla.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Pantalla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 153, 255)));
-        Pantalla.setOpaque(true);
-
+        eluno.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        eluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eluno.setText("1");
+        eluno.setFocusPainted(false);
+        eluno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eluno.setPreferredSize(new java.awt.Dimension(50, 50));
+        eluno.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        eluno.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         eluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elunoActionPerformed(evt);
             }
         });
+        jPanel1.add(eluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
+        eldos.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        eldos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eldos.setText("2");
+        eldos.setFocusPainted(false);
+        eldos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eldos.setPreferredSize(new java.awt.Dimension(50, 50));
+        eldos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        eldos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         eldos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eldosActionPerformed(evt);
             }
         });
+        jPanel1.add(eldos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
+        eltres.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        eltres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         eltres.setText("3");
+        eltres.setFocusPainted(false);
+        eltres.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eltres.setPreferredSize(new java.awt.Dimension(50, 50));
+        eltres.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        eltres.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         eltres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eltresActionPerformed(evt);
             }
         });
+        jPanel1.add(eltres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, -1));
 
+        sumar.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        sumar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         sumar.setText("+");
+        sumar.setFocusPainted(false);
+        sumar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        sumar.setPreferredSize(new java.awt.Dimension(50, 50));
+        sumar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        sumar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         sumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sumarActionPerformed(evt);
             }
         });
+        jPanel1.add(sumar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
 
+        resultado.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        resultado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono3v.png"))); // NOI18N
         resultado.setText("=");
+        resultado.setFocusPainted(false);
+        resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        resultado.setPreferredSize(new java.awt.Dimension(50, 50));
+        resultado.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        resultado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono3v.png"))); // NOI18N
         resultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resultadoActionPerformed(evt);
             }
         });
+        jPanel1.add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, -1, -1));
 
+        elcuatro.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elcuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elcuatro.setText("4");
+        elcuatro.setFocusPainted(false);
+        elcuatro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elcuatro.setPreferredSize(new java.awt.Dimension(50, 50));
+        elcuatro.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elcuatro.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elcuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elcuatroActionPerformed(evt);
             }
         });
+        jPanel1.add(elcuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
+        elcinco.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elcinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elcinco.setText("5");
+        elcinco.setFocusPainted(false);
+        elcinco.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elcinco.setPreferredSize(new java.awt.Dimension(50, 50));
+        elcinco.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elcinco.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elcinco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elcincoActionPerformed(evt);
             }
         });
+        jPanel1.add(elcinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
+        elseis.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elseis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elseis.setText("6");
+        elseis.setFocusPainted(false);
+        elseis.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elseis.setPreferredSize(new java.awt.Dimension(50, 50));
+        elseis.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elseis.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elseis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elseisActionPerformed(evt);
             }
         });
+        jPanel1.add(elseis, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
+        elsiete.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elsiete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elsiete.setText("7");
+        elsiete.setFocusPainted(false);
+        elsiete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elsiete.setPreferredSize(new java.awt.Dimension(50, 50));
+        elsiete.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elsiete.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elsiete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elsieteActionPerformed(evt);
             }
         });
+        jPanel1.add(elsiete, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
+        elocho.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elocho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elocho.setText("8");
+        elocho.setFocusPainted(false);
+        elocho.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elocho.setPreferredSize(new java.awt.Dimension(50, 50));
+        elocho.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elocho.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elocho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elochoActionPerformed(evt);
             }
         });
+        jPanel1.add(elocho, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
+        elnueve.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        elnueve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         elnueve.setText("9");
+        elnueve.setFocusPainted(false);
+        elnueve.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        elnueve.setPreferredSize(new java.awt.Dimension(50, 50));
+        elnueve.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        elnueve.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         elnueve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 elnueveActionPerformed(evt);
             }
         });
+        jPanel1.add(elnueve, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
+        cero.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        cero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         cero.setText("0");
+        cero.setFocusPainted(false);
+        cero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        cero.setPreferredSize(new java.awt.Dimension(50, 50));
+        cero.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        cero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         cero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ceroActionPerformed(evt);
             }
         });
+        jPanel1.add(cero, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
+        resta.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        resta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         resta.setText("-");
+        resta.setFocusPainted(false);
+        resta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        resta.setPreferredSize(new java.awt.Dimension(50, 50));
+        resta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        resta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         resta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restaActionPerformed(evt);
             }
         });
+        jPanel1.add(resta, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
+        multiplicacion.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        multiplicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         multiplicacion.setText("*");
+        multiplicacion.setFocusPainted(false);
+        multiplicacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        multiplicacion.setPreferredSize(new java.awt.Dimension(50, 50));
+        multiplicacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        multiplicacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         multiplicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 multiplicacionActionPerformed(evt);
             }
         });
+        jPanel1.add(multiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
 
-        division.setText("/");
+        division.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        division.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
+        division.setText("÷");
+        division.setFocusPainted(false);
+        division.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        division.setPreferredSize(new java.awt.Dimension(50, 50));
+        division.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        division.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         division.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 divisionActionPerformed(evt);
             }
         });
+        jPanel1.add(division, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
+        clear.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         clear.setText("C");
+        clear.setFocusPainted(false);
+        clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        clear.setPreferredSize(new java.awt.Dimension(50, 50));
+        clear.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        clear.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
+        punto.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        punto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         punto.setText(".");
+        punto.setFocusPainted(false);
+        punto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        punto.setPreferredSize(new java.awt.Dimension(50, 50));
+        punto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        punto.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         punto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 puntoActionPerformed(evt);
             }
         });
+        jPanel1.add(punto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, -1, -1));
 
+        borrarnumero.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        borrarnumero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         borrarnumero.setText("x");
+        borrarnumero.setFocusPainted(false);
+        borrarnumero.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        borrarnumero.setPreferredSize(new java.awt.Dimension(50, 50));
+        borrarnumero.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        borrarnumero.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         borrarnumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 borrarnumeroActionPerformed(evt);
             }
         });
+        jPanel1.add(borrarnumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
+        signo.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
+        signo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
         signo.setText("+/-");
+        signo.setFocusPainted(false);
+        signo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        signo.setPreferredSize(new java.awt.Dimension(50, 50));
+        signo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        signo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
         signo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signoActionPerformed(evt);
             }
         });
+        jPanel1.add(signo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 53, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(signo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(elseis)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(eluno)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cero)
-                                        .addComponent(eldos))
-                                    .addGap(24, 24, 24)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(eltres)
-                                        .addComponent(punto)))
-                                .addComponent(elnueve))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(elcuatro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(elcinco))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(clear)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(elsiete)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(elocho))))
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultado)
-                            .addComponent(sumar)
-                            .addComponent(division)
-                            .addComponent(multiplicacion)
-                            .addComponent(resta))))
-                .addGap(0, 99, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(borrarnumero)
-                .addGap(72, 72, 72))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
-                .addComponent(borrarnumero)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(division)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(clear)
-                        .addGap(9, 9, 9)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(elsiete)
-                    .addComponent(elocho)
-                    .addComponent(elnueve)
-                    .addComponent(multiplicacion))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(elcuatro)
-                    .addComponent(elcinco)
-                    .addComponent(elseis)
-                    .addComponent(resta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eluno)
-                    .addComponent(eldos)
-                    .addComponent(eltres)
-                    .addComponent(sumar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(cero)
-                        .addComponent(resultado)
-                        .addComponent(punto))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(signo)))
-                .addGap(30, 30, 30))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
+        jButton1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel2.setBackground(new java.awt.Color(218, 255, 255));
+
+        Pantalla.setBackground(new java.awt.Color(224, 253, 255));
+        Pantalla.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        Pantalla.setForeground(new java.awt.Color(54, 46, 46));
+        Pantalla.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Pantalla.setFocusable(false);
+        Pantalla.setOpaque(true);
+
+        operaciones.setBackground(new java.awt.Color(210, 253, 238));
+        operaciones.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(operaciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(operaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 150));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void elunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elunoActionPerformed
@@ -346,6 +440,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         this.Pantalla.setText("");
+         this.operaciones.setText("");
     }//GEN-LAST:event_clearActionPerformed
 
                        
@@ -355,11 +450,13 @@ public class Interfaz extends javax.swing.JFrame {
         Suma s1=new Suma(this.num1=Double.parseDouble(this.Pantalla.getText()),0);
         this.operador="+";
         this.Pantalla.setText("");
+        this.operaciones.setText(this.decimal(num1)+operador);
     }//GEN-LAST:event_sumarActionPerformed
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
      Suma s2=new Suma(num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
      if (operador=="+"){  this.Pantalla.setText(this.decimal(s2.execute(num1, num2)));
+     this.operaciones.setText(this.decimal(num1)+"+"+this.decimal(num2));
     // num1=0;
      //num2=0;
      //done=this.Pantalla.isVisible();
@@ -367,17 +464,19 @@ public class Interfaz extends javax.swing.JFrame {
      }
      
      Resta r2=new Resta (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="-") this.Pantalla.setText(this.decimal(r2.execute(num1, num2)));
+     if (operador=="-") {this.Pantalla.setText(this.decimal(r2.execute(num1, num2)));
+     this.operaciones.setText(this.decimal(num1)+"-"+this.decimal(num2));}
      
     Multiplicacion m2=new Multiplicacion (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="*") this.Pantalla.setText(this.decimal(m2.execute(num1, num2))); 
+     if (operador=="*"){ this.Pantalla.setText(this.decimal(m2.execute(num1, num2))); 
+     this.operaciones.setText(this.decimal(num1)+"x"+this.decimal(num2));}
      
       Division d2=new Division (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
-     if (operador=="/") { 
-         if(num2==0){this.Pantalla.setText("Indeterminado");}
+     if (operador=="÷") { 
+         if(num2==0){this.Pantalla.setText("Indeterminado"); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));}
          
          else {
-         this.Pantalla.setText(this.decimal(d2.execute(num1, num2)));} 
+         this.Pantalla.setText(this.decimal(d2.execute(num1, num2))); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));} 
          }
     }//GEN-LAST:event_resultadoActionPerformed
 
@@ -391,18 +490,21 @@ public class Interfaz extends javax.swing.JFrame {
        Resta r1=new Resta (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
         this.operador="-";
         this.Pantalla.setText("");
+         this.operaciones.setText(this.decimal(num1)+operador);
     }//GEN-LAST:event_restaActionPerformed
 
     private void multiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicacionActionPerformed
         Multiplicacion m1=new Multiplicacion (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
         this.operador="*";
         this.Pantalla.setText("");
+        this.operaciones.setText(this.decimal(num1)+operador);
     }//GEN-LAST:event_multiplicacionActionPerformed
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
         Division d1=new Division (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
-        this.operador="/";
+        this.operador="÷";
         this.Pantalla.setText("");
+        this.operaciones.setText(this.decimal(num1)+operador);
     }//GEN-LAST:event_divisionActionPerformed
 
     private void borrarnumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarnumeroActionPerformed
@@ -423,6 +525,7 @@ public class Interfaz extends javax.swing.JFrame {
         num=(-1)*Double.parseDouble(datos);
         
        this.Pantalla.setText(this.decimal(num));
+       this.operaciones.setText(this.decimal(num));
         
         }
     }//GEN-LAST:event_signoActionPerformed
@@ -486,8 +589,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton elsiete;
     private javax.swing.JButton eltres;
     private javax.swing.JButton eluno;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton multiplicacion;
+    private javax.swing.JLabel operaciones;
     private javax.swing.JButton punto;
     private javax.swing.JButton resta;
     private javax.swing.JButton resultado;
