@@ -479,11 +479,25 @@ public class Interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(signo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 53, -1));
 
+        modulo.setBackground(new java.awt.Color(0, 0, 0));
+        modulo.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         modulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono1v.png"))); // NOI18N
+        modulo.setText("%");
         modulo.setBorderPainted(false);
+        modulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         modulo.setPreferredSize(new java.awt.Dimension(50, 50));
         modulo.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Icono1 (1).png"))); // NOI18N
         modulo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicono2v.png"))); // NOI18N
+        modulo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                moduloMouseClicked(evt);
+            }
+        });
+        modulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moduloActionPerformed(evt);
+            }
+        });
         jPanel1.add(modulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(218, 255, 255));
@@ -636,6 +650,12 @@ public class Interfaz extends javax.swing.JFrame {
          else {
          this.Pantalla.setText(this.decimal(d2.execute(num1, num2))); this.operaciones.setText(this.decimal(num1)+"÷"+this.decimal(num2));} 
          }
+     
+     Module module2=new Module (num1,this.num2=Double.parseDouble(this.Pantalla.getText()));
+     if (operador=="%") {this.Pantalla.setText(this.decimal(module2.execute(num1, num2)));
+     this.operaciones.setText(this.decimal(num1)+"%"+this.decimal(num2));}
+     
+     
     }//GEN-LAST:event_resultadoActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
@@ -883,6 +903,19 @@ public class Interfaz extends javax.swing.JFrame {
        sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
        sound.play();
     }//GEN-LAST:event_puntoMouseClicked
+
+    private void moduloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moduloActionPerformed
+       Module m1=new Module (this.num1=Double.parseDouble(this.Pantalla.getText()),0);
+        this.operador="%";
+        this.Pantalla.setText("");
+         this.operaciones.setText(this.decimal(num1)+operador);
+    }//GEN-LAST:event_moduloActionPerformed
+
+    private void moduloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moduloMouseClicked
+           AudioClip sound;
+       sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
+       sound.play();
+    }//GEN-LAST:event_moduloMouseClicked
 
     public void tema1(JButton btn){
     
