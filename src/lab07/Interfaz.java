@@ -13,6 +13,7 @@ import java.applet.AudioClip;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 /**
  *
@@ -23,6 +24,8 @@ public class Interfaz extends javax.swing.JFrame {
     public double num2;
     public String operador;  
     public boolean done=false;
+    Scanner key1=new Scanner(System.in);
+    int Numeros;
     
     
     
@@ -508,6 +511,11 @@ public class Interfaz extends javax.swing.JFrame {
         Pantalla.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Pantalla.setFocusable(false);
         Pantalla.setOpaque(true);
+        Pantalla.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PantallaKeyPressed(evt);
+            }
+        });
 
         operaciones.setBackground(new java.awt.Color(210, 253, 238));
         operaciones.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -568,6 +576,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void elunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elunoActionPerformed
         this.Pantalla.setText(this.Pantalla.getText()+"1");
+        
     }//GEN-LAST:event_elunoActionPerformed
 
     private void eldosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eldosActionPerformed
@@ -916,6 +925,11 @@ public class Interfaz extends javax.swing.JFrame {
        sound=java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/Windows Balloon.wav"));
        sound.play();
     }//GEN-LAST:event_moduloMouseClicked
+
+    private void PantallaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PantallaKeyPressed
+      Numeros=key1.nextInt();
+        this.Pantalla.setText(""+Numeros);
+    }//GEN-LAST:event_PantallaKeyPressed
 
     public void tema1(JButton btn){
     
